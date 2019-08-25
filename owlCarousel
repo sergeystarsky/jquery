@@ -9,4 +9,10 @@ gulp.task('scripts', function() {
 	'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 	'app/libs/owl.carousel/dist/owl.carousel.min.js']) 
 });
--
+-в файле libs.sass 
+пропишем откудаа импортирует базовые стили
+@import "../libs/owl.carousel/dist/assets/owl.carousel.min" 
+@import "../libs/owl.carousel/dist/assets/owl.theme.default.min"
+
+-в файле main.sass
+в начале пропишем откуда 
