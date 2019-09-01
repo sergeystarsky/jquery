@@ -1,18 +1,26 @@
 Установим плагин 
-В рабочем окне команд проекта установим плагин bower install OwlCarousel2 (устаналиваем перед пакой app, тогда все сохранится по указанному пути)
+В рабочем окне команд проекта установим плагин bower install OwlCarousel2 (устаналиваем перед папкой app, тогда все сохранится по указанному пути)
 установка осуществится в папку app\libs\owl.carousel
 туда же и плагин app\libs\jquery
+
  -В gulpfile.js пропишем путь к файлу
 gulp.task('scripts', function() {
 	return gulp.src([
 	'app/libs/jquery/dist/jquery.min.js',
-	'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+	'app/libs/owl.carousel/dist/owl.carousel.js',
 	'app/libs/owl.carousel/dist/owl.carousel.min.js']) 
 });
+
 -в файле libs.sass 
 пропишем откуда импортирует базовые стили !!! Важно не указываем расширение CSS!!!
 @import "../libs/owl.carousel/dist/assets/owl.carousel.min" 
 @import "../libs/owl.carousel/dist/assets/owl.theme.default.min"
 
 -в файле main.sass
-в начале пропишем откуда 
+@import "libs" в начале пропишем откуда 
+
+-в файле  common.js запускаем базовую версию карусели
+$(function(){
+$(".owl-carousel").owlCarousel();
+});
+Далее костамизируем ее под проект
